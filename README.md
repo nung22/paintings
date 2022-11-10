@@ -1,1 +1,1 @@
-# python_belt_exam
+# paintings
