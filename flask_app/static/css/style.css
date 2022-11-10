@@ -1,0 +1,201 @@
+/* CSS Reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* General Formatting */
+.container {
+    display: grid;
+    gap: 10px;
+    font-family: "Varela Round",sans-serif;
+    margin: 0 auto;
+    width: 970px;
+}
+
+.form-container {
+    background-color: lightgray;  
+}
+.flash-message {
+    background-color: rgb(255, 141, 141);
+    color: rgb(66, 1, 1);
+}
+.btn {
+    width: 100px;
+    margin-top: 10px;
+    margin-left: -10px;
+    font-size: small;
+}
+h1 {
+    font-weight: bolder;
+    }
+
+/* Login & Registration */
+.grid-container-index {
+    column-gap: 50px;
+    grid-template-areas:
+        "A A"
+        "D D"
+        "B C"
+        "B C"
+}
+.registration {
+    grid-area: B;
+}
+.login {
+    grid-area: C;
+}
+.user-warning {
+    grid-area: D;
+}
+.grid-container-index input {
+    margin-bottom: 15px;
+}
+.grid-container-index label {
+    margin-bottom: 5px;
+    margin-left: -8px;
+}
+
+/* Painting Dashboard */
+.grid-container-paintings {
+    grid-template-areas: 
+        "A A A A B B D"
+        "C C C C C C C"
+        "E E E E E E E"
+        "F F F F F F F"
+        "G G G G G G G"
+}
+.dashboard-greeting {
+    grid-area: A;
+}
+.dashboard-name {
+    grid-area: C;
+}
+.create-link {
+    grid-area: B;
+    width: 126px;
+    height: 40px;
+}
+.logout-link {
+    grid-area: D;
+    width: 80px;
+    height: 40px;
+}
+.dashboard {
+    grid-area: E;
+    border: 3px solid black;
+}
+.purchase-list-name {
+    grid-area: F;
+}
+.purchase-list {
+    grid-area: G;
+    border: 3px solid black;
+}
+.dashboard,.purchase-list {
+    vertical-align: middle;
+}
+
+/* Single Painting Card */
+.grid-container-show-painting {
+    align-items: center;
+    grid-template-areas: 
+        "S S S S S S S S A B C"
+        "D D D D D D D D D D D"
+        "E E E E E E E E E E E"
+        "F F F F F F F F F F F"
+}
+.spacer {
+    grid-area: S;
+}
+.create-card-link {
+    grid-area: A;
+    width: 126px;
+}
+.return-card-link {
+    grid-area: B;
+    width: 110px;
+}
+.logout-card-link {
+    grid-area: C;
+    width: 80px;
+}
+.card-name {
+    grid-area: D;
+}
+.card-artist {
+    grid-area: E;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.painting-card {
+    grid-area: F;
+    border: 3px solid black;
+    padding: 20px;
+    width: 500px;
+}
+.buy-link {
+    width: 60px;
+    margin-left: 10px;
+}
+
+/* New Painting & Edit Painting Form */
+.grid-container-painting {
+    align-items: center;
+    grid-template-areas:
+        "S S S S S S S S A B C"
+        "D D D D D D D D D D D"
+        "E E E E E E E E E E E"
+        "F F F F F F F F F F F"
+}
+.create-form-link {
+    grid-area: A;
+    width: 126px;
+}
+.return-form-link {
+    grid-area: B;
+    width: 110px;
+}
+.logout-form-link {
+    grid-area: C;
+    width: 80px;
+}
+.form-title {
+    grid-area: D;
+}
+.painting-warning {
+    grid-area: E;
+    width: 340px;
+}
+.painting-form {
+    width: 500px;
+    grid-area: F;
+    display: grid;
+    gap: 20px 100px;
+    grid-template-areas:
+        "A A A"
+        "B B B"
+        "B B B"
+        "C C C"
+        "D D D"
+        "F F F"
+}
+.painting-title {
+    grid-area: A;
+}
+.painting-description {
+    grid-area: B;
+}
+.painting-price {
+    grid-area: C;
+}
+.painting-quantity {
+    grid-area: D;
+}
+.painting-submit {
+    grid-area: F;
+}
+.form-check-input {
+    margin-right: 5px;
+    margin-left: 15px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Edit - Black Belt</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css'
+        integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi'
+        rel='stylesheet' crossorigin='anonymous'>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Varela+Round'>
+</head>
+<body>
+    <div class="container p-3 grid-container-painting">
+        <div class="spacer"></div>
+        <a class="create-form-link text-end fs-6 bg-warning text-light btn" href="/paintings/new">Add Painting</a>
+        <a class="return-form-link text-end fs-6 bg-info text-light btn" href="/paintings">Dashboard</a>
+        <a class="logout-form-link text-end fs-6 bg-danger text-light btn" href="/logout">Logout</a>
+        <h1 class="form-title">Edit a Painting</h1>
+        <div class="painting-warning">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="flash-message rounded p-2 mb-2">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </div>
+        <form action="/edit_painting" method="post" class="form-container painting-form rounded p-4">
+            <input type="hidden" name="id" value="{{ painting.id }}">
+            <div class="form-group painting-name">
+                <label for="title">Title:</label>
+                <input required class="form-control" type="text" name="title" placeholder="title" id="title" value="{{ painting.title }}">
+            </div>
+            <div class="form-group painting-description">
+                <label for="description">Description:</label>
+                <textarea class="form-control" name="description" id="description" placeholder="description..." rows="3">{{ painting.description }}</textarea>
+            </div>
+            <div class="form-group painting-price">
+                <label for="price">Price:</label>
+                <input required class="form-control" type="number" name="price" step="0.01" placeholder="0.00" id="price" value="{{ painting.price }}">
+            </div>
+            <div class="form-group painting-quantity">
+                <label for="quantity">Quantity:</label>
+                <input required class="form-control" type="number" name="quantity" id="quantity" value="{{ painting.quantity }}">
+            </div>
+            <input class="form-control bg-success text-light btn painting-submit" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
